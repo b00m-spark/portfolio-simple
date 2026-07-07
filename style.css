@@ -22,6 +22,8 @@ a:hover{
     display: flex;
     height: 50px;
     background-color: var(--background-color);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-left,
