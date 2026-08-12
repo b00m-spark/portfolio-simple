@@ -3,80 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esther Homepage</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>Esther Yao | Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-space">
     <div id="global-header"></div>
 
-    <div class="top-section">
-        <div class="top-section-left">
-            <div class="blank"></div>
-            <div class="top-section-content">
-                <h1>Hi, I'm Esther Yao</h1>
-                <p>A UCLA CS & Linguistics student passionate about coding, learning, and building creative solutions for the world</p>
-                <a href="portfolio.html" class="btn">See my projects &rarr;</a>
+    <main>
+        <section class="space-hero">
+            <div class="space-hero-copy">
+                <p class="pixel-label">ESTHER.LOG // CS + LINGUISTICS // UCLA</p>
+                <h1>Hi, I'm Esther Yao.</h1>
+                <p class="hero-lede">
+                    I'm a Computer Science and Linguistics student at UCLA, interested in language, technology, 
+                    and building things that are actually useful to people.
+                </p>
+                <div class="hero-actions">
+                    <a href="portfolio.html" class="pixel-btn">Launch portfolio</a>
+                    <a href="mailto:yueheng@g.ucla.edu" class="pixel-btn secondary">Send signal</a>
+                </div>
+                <div class="status-strip" aria-label="Current interests">
+                    <span>Full-stack</span>
+                    <span>Agentic AI</span>
+                    <span>creative tools</span>
+                    <span>cozy games</span>
+                </div>
             </div>
-        </div>
-        <div class="top-section-right">
-            <img src="images/selfie.jpg">
-        </div>
-    </div>
 
-    <div class="pictures-section">
-        <div class="pictures-section-title">
-            <h1>Who am I?</h1>
-        </div>
-        <div class="pictures-section-pics">
-            <div class="pic-container">
-                <img class="square-pic" src="images/hiking.jpg">
-                <div class="square-pic-description"><span>hiker</span> that always feel so at home in forests and on trails</div>
-            </div>
-            <div class="pic-container">
-                <img class="square-pic" src="images/musical.JPG">
-                <div class="square-pic-description"><span>singer</span> that brought ucla's first ever chinese musical club to life</div>
-            </div>
-            <div class="pic-container">
-                <img class="square-pic" src="images/travel.jpg">
-                <div class="square-pic-description"><span>traveller</span> that explores different cultures and lives</div>
-            </div>
-            <div class="pic-container">
-                <img class="square-pic" src="images/cat.jpg">
-                <div class="square-pic-description"><span>cat lover</span> that sadly suffer from catlessness</div>
-            </div>
-        </div>
-    </div>
+            <aside class="image-frame hero-image-placeholder" aria-label="Hero image">
+                <img src="images/mainphoto.png" alt="Esther" />
+            </aside>
+        </section>
 
-    <div class="quote-section">
-        <p class="quote">If I can stop one heart from breaking,
-                        I shall not live in vain;
-                        If I can ease one life the aching,
-                        Or cool one pain;
-                        Or help one fainting robin,
-                        Unto his nest again,
-                        I shall not live in vain.
-        </p>
-        <p class="author">--- Emily Dickinson</p>
-    </div>
+        <section class="mission-grid">
+            <aside class="image-frame mission-image-placeholder" aria-label="About image">
+                <img src="images/selfie.jpg" alt="Esther smiling" />
+            </aside>
+            <article class="mission-card intro-card">
+                <p class="pixel-label">ABOUT ME</p>
+                <h2>Part programmer, part life enthusaist and side-quest collector.</h2>
+                <p>
+                    I'm currently studying Computer Science and Linguistics at UCLA. I'm interested in language, 
+                    technology, and the ways we use them to understand and communicate with one another. 
+                    Outside of school, I spend a lot of time exploring new places, reading, having fun in nature, and being involved in my community.
+                </p>
+            </article>
+        </section>
 
-    <div class="signup-section">
-        <div class="blue-box">
-            <div class="bluebox-left">
-                <p class="title">Curious about my projects?</p>
-                <p class="text">Dive into my portfolio by clicking the button!</p>
-            </div>
+        <section class="life-section">
             <div>
-                <a class="btn" href="portfolio.html">my portfolio</a>
+                <p class="pixel-label">LIFE INVENTORY</p>
+                <h2>Outside the screen</h2>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Contact me: yueheng@g.ucla.edu</p>
-    </div>
+            <div class="inventory-grid">
+                <article>
+                    <span>01</span>
+                    <h3>Hiker</h3>
+                    <p>I feel most at home in forests, on trails, and lying in nature's embrace</p>
+                    <div class="image-frame life-image-placeholder" aria-label="Hiking image">
+                        <img src="images/hiking.jpg" alt="Esther hiking" />
+                    </div>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Singer</h3>
+                    <p>I helped bring UCLA's first Chinese musical club to life.</p>
+                    <div class="image-frame life-image-placeholder" aria-label="Singing image">
+                        <img src="images/musical.JPG" alt="Musical performance" />
+                    </div>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Traveller</h3>
+                    <p>I like exploring different cities and cultures, learning about other histories and lives</p>
+                    <div class="image-frame life-image-placeholder" aria-label="Travel image">
+                        <img src="images/travel.jpg" alt="Travel memory" />
+                    </div>
+                </article>
+                <article>
+                    <span>04</span>
+                    <h3>Cat lover</h3>
+                    <p>Currently suffering from catlessness, but spiritually surrounded by cats.</p>
+                    <div class="image-frame life-image-placeholder" aria-label="Cat image">
+                        <img src="images/cat.jpg" alt="A cat" />
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <div>
+                <p class="pixel-label">PROJECT SIGNALS</p>
+                <h2>Featured builds</h2>
+            </div>
+            <div class="featured-project-grid">
+                <article class="featured-project-card">
+                    <div class="image-frame featured-project-image" aria-label="Patron-saint finder image">
+                        <img src="project-imgs/find-saint-imgs/thumbnail.png" alt="Patron-saint finder thumbnail" />
+                    </div>
+                    <h3>Patron-saint finder</h3>
+                    <p>An OpenAI API powered streamlit app that finds the perfect patron saint fit based on your personal preferences</p>
+                </article>
+                <article class="featured-project-card">
+                    <div class="image-frame featured-project-image" aria-label="Lost and found app image">
+                        <img src="project-imgs/lost-and-found/lost_and_found_thumbnail.png" alt="Lost and found app thumbnail" />
+                    </div>
+                    <h3>Lost and found web app</h3>
+                    <p>A full-stack lost-and-found platform that allows students to report, browse, filter, and recover lost and found items</p>
+                </article>
+                <article class="featured-project-card">
+                    <div class="image-frame featured-project-image" aria-label="WonkyKong videogame image">
+                        <img src="project-imgs/wonkykong/wonky-kong-thumbnail.png" alt="WonkyKong videogame thumbnail" />
+                    </div>
+                    <h3>WonkyKong videogame</h3>
+                    <p>A 2d platformer video game that features multiple actors, enemies and collectibles</p>
+                </article>
+            </div>
+            <div class="hero-actions">
+                <a href="portfolio.html" class="pixel-btn">Open full portfolio</a>
+            </div>
+        </section>
+
+        <section class="quote-console">
+            <p class="pixel-label">CAPTAIN'S QUOTE</p>
+            <blockquote>
+                If I can stop one heart from breaking, I shall not live in vain.
+            </blockquote>
+            <p class="quote-author">Emily Dickinson</p>
+        </section>
+
+        <section class="travel-map-section">
+            <div class="travel-map-header">
+                <p class="pixel-label">TRAVEL LOG</p>
+                <h2>Footsteps in orbit</h2>
+                <p>A quiet little map of places that shaped who I am. Hover a glowing country to open a field note.</p>
+            </div>
+            <div class="travel-console">
+                <div class="travel-map-shell">
+                    <svg class="travel-map" viewBox="0 0 1000 520" role="img" aria-label="Interactive world map of countries Esther has visited">
+                        <rect class="map-ocean" width="1000" height="520" rx="8"></rect>
+                        <g class="country-layer"></g>
+                    </svg>
+                    <div class="travel-card" aria-live="polite">
+                        <img src="images/travel-placeholder.png" alt="" />
+                        <div>
+                            <p class="pixel-label">FIELD NOTE</p>
+                            <h3>Choose a signal</h3>
+                            <p>Visited countries glow on the map. Hover one to see a placeholder note here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="travel-list" aria-label="Visited countries list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="space-footer">
+        <p>Esther Yao</p>
+        <p>
+            <a href="mailto:yueheng@g.ucla.edu">yueheng@g.ucla.edu</a>
+            <span>CS + Linguistics @ UCLA</span>
+        </p>
+    </footer>
+
+    <script src="header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="travel-map.js"></script>
 </body>
-<script src="header.js"></script>
 </html>
