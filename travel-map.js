@@ -20,12 +20,14 @@ const travelCard = document.querySelector(".travel-card");
 const travelList = document.querySelector(".travel-list");
 const placeholderImage = "images/travel-placeholder.png";
 const countryLookup = new Map();
+let hideTravelCardTimer;
 
 visitedCountries.forEach((country) => {
     country.mapNames.forEach((mapName) => countryLookup.set(mapName, country));
 });
 
 function activateCountry(country) {
+    clearTimeout(hideTravelCardTimer);
     travelCard.innerHTML = `
         <img src="${placeholderImage}" alt="Placeholder travel photo for ${country.name}" />
         <div>
@@ -34,6 +36,14 @@ function activateCountry(country) {
             <p>${country.note}</p>
         </div>
     `;
+    travelCard.classList.add("is-visible");
+}
+
+function hideTravelCard() {
+    clearTimeout(hideTravelCardTimer);
+    hideTravelCardTimer = setTimeout(() => {
+        travelCard.classList.remove("is-visible");
+    }, 90);
 }
 
 visitedCountries.forEach((country) => {
@@ -41,10 +51,18 @@ visitedCountries.forEach((country) => {
     listItem.type = "button";
     listItem.textContent = country.name;
     listItem.addEventListener("mouseenter", () => activateCountry(country));
+    listItem.addEventListener("mouseleave", hideTravelCard);
     listItem.addEventListener("focus", () => activateCountry(country));
+    listItem.addEventListener("blur", hideTravelCard);
     listItem.addEventListener("click", () => activateCountry(country));
     travelList.appendChild(listItem);
 });
+
+travelCard.addEventListener("mouseenter", () => {
+    clearTimeout(hideTravelCardTimer);
+    travelCard.classList.add("is-visible");
+});
+travelCard.addEventListener("mouseleave", hideTravelCard);
 
 d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then((world) => {
     const countries = topojson.feature(world, world.objects.countries).features;
@@ -70,9 +88,15 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then((
             const visitedCountry = countryLookup.get(country.properties.name);
             if (visitedCountry) activateCountry(visitedCountry);
         })
+        .on("mouseleave", (event, country) => {
+            if (countryLookup.get(country.properties.name)) hideTravelCard();
+        })
         .on("focus", (event, country) => {
             const visitedCountry = countryLookup.get(country.properties.name);
             if (visitedCountry) activateCountry(visitedCountry);
+        })
+        .on("blur", (event, country) => {
+            if (countryLookup.get(country.properties.name)) hideTravelCard();
         });
 }).catch(() => {
     travelCard.innerHTML = `
@@ -83,4 +107,5 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then((
             <p>The country map could not load. The country list still works as a backup.</p>
         </div>
     `;
+    travelCard.classList.add("is-visible");
 });
