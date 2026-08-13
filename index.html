@@ -48,8 +48,8 @@
                         <li>Rachmaninoff's Second Symphony</li>
                         <li>Things that rhyme</li>
                         <li>Fiction with no plot</li>
-                        <li>Smell of incense</li>
-                        <li>Raw salmon</li>
+                        <li>Smell of incense (sniff-sniff)</li>
+                        <li>Raw salmon (heaven)</li>
                     </ul>
                 </div>
             </aside>
@@ -58,6 +58,8 @@
         <section class="about-section">
             <aside class="image-frame about-selfie-cutout" aria-label="About image">
                 <img src="images/selfie.png" alt="Esther smiling" />
+                <img class="about-decor about-decor-spark" src="images/decor-spark.png" alt="" aria-hidden="true" />
+                <img class="about-decor about-decor-heart" src="images/decor-heart.png" alt="" aria-hidden="true" />
             </aside>
             <article class="about-card">
                 <p class="pixel-label">ABOUT ME</p>
@@ -145,11 +147,27 @@
         </section>
 
         <section class="quote-console">
-            <p class="pixel-label">CAPTAIN'S QUOTE</p>
-            <blockquote>
-                If I can stop one heart from breaking, I shall not live in vain.
-            </blockquote>
-            <p class="quote-author">Emily Dickinson</p>
+            <div class="quote-copy">
+                <p class="pixel-label">CAPTAIN'S QUOTE</p>
+                <blockquote>
+                    If I can stop one heart from breaking, I shall not live in vain.
+                </blockquote>
+                <p class="quote-author">Emily Dickinson</p>
+            </div>
+            <div class="quote-saint-shrine">
+                <img class="quote-saint-sticker" src="images/st-therese-sticker.png" alt="Pixel art sticker of St. Therese of Lisieux holding roses" />
+                <div class="candle-row" aria-label="Interactive candles">
+                    <button type="button" class="candle-button" aria-label="Light candle 1">
+                        <img src="images/candle-unlit.png" alt="" aria-hidden="true" />
+                    </button>
+                    <button type="button" class="candle-button" aria-label="Light candle 2">
+                        <img src="images/candle-unlit.png" alt="" aria-hidden="true" />
+                    </button>
+                    <button type="button" class="candle-button" aria-label="Light candle 3">
+                        <img src="images/candle-unlit.png" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
         </section>
 
         <section class="travel-map-section">
@@ -193,5 +211,6 @@
     <script src="travel-map.js"></script>
     <script src="cat-tracker.js"></script>
     <script src="signal-launcher.js"></script>
+    <script src="candles.js"></script>
 </body>
 </html>
