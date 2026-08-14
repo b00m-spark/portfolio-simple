@@ -589,6 +589,14 @@ button,
 .about-selfie-cutout > img:not(.about-decor) {
     position: relative;
     z-index: 1;
+    transition: filter 0.18s ease;
+}
+
+.about-selfie-cutout:hover > img:not(.about-decor),
+.about-selfie-cutout:focus-within > img:not(.about-decor) {
+    filter:
+        drop-shadow(0 0 8px rgba(248, 231, 139, 0.42))
+        drop-shadow(0 0 20px rgba(248, 231, 139, 0.24));
 }
 
 .about-decor {
@@ -702,6 +710,14 @@ button,
     padding: clamp(24px, 2.8vw, 34px);
     overflow: hidden;
     transform: translateY(var(--card-offset, 0)) rotate(var(--card-tilt, 0deg));
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.inventory-grid article:hover {
+    border-color: rgba(141, 239, 255, 0.72);
+    box-shadow:
+        0 0 0 4px rgba(141, 239, 255, 0.1),
+        0 0 24px rgba(141, 239, 255, 0.22);
 }
 
 .inventory-grid article::before {
@@ -790,6 +806,19 @@ button,
     flex-direction: column;
     min-height: 100%;
     overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.featured-project-card:hover,
+.featured-project-card:focus {
+    border-color: rgba(141, 239, 255, 0.72);
+    box-shadow:
+        0 0 0 4px rgba(141, 239, 255, 0.1),
+        0 0 24px rgba(141, 239, 255, 0.22);
+    outline: none;
+    transform: translateY(-3px);
 }
 
 .featured-project-card h3 {
