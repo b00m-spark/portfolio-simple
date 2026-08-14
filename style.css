@@ -1026,6 +1026,7 @@ button,
 }
 
 .quote-saint-sticker {
+    --saint-scale: 1;
     position: absolute;
     right: -10px;
     top: -46px;
@@ -1035,6 +1036,73 @@ button,
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.32));
+    transform: scale(var(--saint-scale));
+    transform-origin: center bottom;
+    transition: filter 0.18s ease, transform 0.18s ease;
+}
+
+.quote-saint-sticker:hover,
+.quote-saint-sticker:focus {
+    --saint-scale: 1.05;
+    filter:
+        drop-shadow(0 0 8px rgba(248, 231, 139, 0.48))
+        drop-shadow(0 0 18px rgba(248, 231, 139, 0.28))
+        drop-shadow(0 16px 24px rgba(0, 0, 0, 0.34));
+}
+
+.quote-saint-sticker:focus {
+    outline: none;
+}
+
+.saint-note-card {
+    position: absolute;
+    right: calc(clamp(22px, 6vw, 76px) * -1);
+    top: 86px;
+    z-index: 4;
+    width: min(380px, calc(100vw - 42px));
+    padding: 18px 20px;
+    border: 2px solid rgba(248, 231, 139, 0.8);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(248, 231, 139, 0.13), rgba(255, 155, 216, 0.1)),
+        rgba(17, 10, 24, 0.95);
+    box-shadow:
+        0 0 0 4px rgba(248, 231, 139, 0.1),
+        0 18px 34px rgba(0, 0, 0, 0.38);
+    color: var(--space-text);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(18px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.quote-saint-sticker:hover + .saint-note-card,
+.quote-saint-sticker:focus + .saint-note-card,
+.saint-note-card:hover,
+.saint-note-card:focus,
+.saint-note-card:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.saint-note-card:focus {
+    outline: none;
+}
+
+.saint-note-card p {
+    color: #f8dfef;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: 430;
+    line-height: 1.5;
+}
+
+.saint-note-card strong {
+    color: var(--space-yellow);
+    font-family: var(--display-font);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .candle-row {
@@ -1049,6 +1117,7 @@ button,
 }
 
 .candle-button {
+    --candle-lift: 0px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1058,6 +1127,9 @@ button,
     border: none;
     background: transparent;
     cursor: pointer;
+    transform: translateY(var(--candle-lift));
+    transform-origin: bottom center;
+    transition: transform 0.14s ease;
 }
 
 .candle-button img {
@@ -1075,15 +1147,19 @@ button,
 }
 
 .candle-button:nth-child(1) {
-    transform: translateY(4px);
+    --candle-lift: 4px;
 }
 
 .candle-button:nth-child(2) {
-    transform: translateY(-6px);
+    --candle-lift: -6px;
 }
 
 .candle-button:nth-child(3) {
-    transform: translateY(1px);
+    --candle-lift: 1px;
+}
+
+.candle-button:hover {
+    transform: translateY(var(--candle-lift)) scale(1.12);
 }
 
 .quote-author {
@@ -1154,6 +1230,22 @@ button,
         width: 116px;
         right: 8px;
         top: -28px;
+    }
+
+    .saint-note-card {
+        left: 50%;
+        right: auto;
+        top: 74px;
+        width: min(340px, calc(100vw - 44px));
+        transform: translate(-50%, 14px);
+    }
+
+    .quote-saint-sticker:hover + .saint-note-card,
+    .quote-saint-sticker:focus + .saint-note-card,
+    .saint-note-card:hover,
+    .saint-note-card:focus,
+    .saint-note-card:focus-within {
+        transform: translate(-50%, 0);
     }
 
     .candle-row {
