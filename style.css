@@ -1422,6 +1422,7 @@ button,
 }
 
 .portfolio-space .project-card-right img {
+    margin-top: 0;
     border: 1px solid rgba(141, 239, 255, 0.18);
     border-radius: 6px;
     filter: saturate(0.9) contrast(0.98) brightness(0.92);
