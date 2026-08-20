@@ -1400,11 +1400,23 @@ button,
 }
 
 .portfolio-space .project-card-left {
+    display: flex;
+    flex-direction: column;
     padding: 18px 16px;
+}
+
+.portfolio-space .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: auto;
+    padding-top: 14px;
 }
 
 .portfolio-space .project-card-left a,
 .portfolio-space .project-card-left a:visited {
+    position: static;
+    display: inline-flex;
     color: var(--space-cyan);
     font-family: var(--display-font);
     font-size: 14px;
